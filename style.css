@@ -1,0 +1,134 @@
+/* Base reset */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  padding: 2em;
+  max-width: 1000px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 1.2em;
+  color: #f1f5f9;
+  text-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  gap: 1em;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid #334155;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.95em;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+  perspective: 500px;
+}
+
+.tab:hover {
+  color: #f1f5f9;
+  border-color: #64748b;
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hidden sections */
+.hidden {
+  display: none;
+}
+
+/* Forecast grid */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+  perspective: 1000px;
+}
+
+/* Phase Cards */
+.phase-card {
+  background: linear-gradient(160deg, #1e293b, #0f172a);
+  border-radius: 14px;
+  padding: 1.8em;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.phase-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+.phase-icon {
+  font-size: 4em;
+  margin-bottom: 0.4em;
+  animation: float 3s ease-in-out infinite;
+}
+
+.phase-name {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 0.3em;
+  color: #f8fafc;
+}
+
+.phase-date {
+  font-size: 0.85em;
+  color: #94a3b8;
+  margin-top: 0.2em;
+}
+
+.phase-extra {
+  font-size: 0.8em;
+  color: #cbd5e1;
+  margin-top: 0.2em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}

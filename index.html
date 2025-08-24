@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Phase Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🌙 Moon Phase Tracker</h1>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button id="tab-today" class="tab active">Today</button>
+      <button id="tab-forecast" class="tab">7-Day Forecast</button>
+    </nav>
+
+    <!-- Sections -->
+    <div id="today-section" class="tab-content">
+      <div id="today-moon-phase" class="phase-card"></div>
+    </div>
+
+    <div id="forecast-section" class="tab-content hidden">
+      <div id="forecast-container" class="forecast-grid"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
